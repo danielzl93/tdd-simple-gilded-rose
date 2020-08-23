@@ -39,4 +39,39 @@ public class DemoTest {
         Demo demo = new Demo();
         int result = demo.calculateNormalQuality(1, -1, 1);
     }
+
+    @Test
+    public void should_return_updateQuality_v1() {
+        Demo demo = new Demo();
+        int result = demo.calculateNormalQuality(10, 20, 9);
+        Assert.assertEquals(19, result);
+    }
+
+    @Test
+    public void should_return_updateQuality_v2() {
+        Demo demo = new Demo();
+        int result = demo.calculateNormalQuality(2, 0, 1);
+        Assert.assertEquals(0, result);
+    }
+
+    @Test
+    public void should_return_updateQuality_v3() {
+        Demo demo = new Demo();
+        int result = demo.calculateNormalQuality(3, 6, 2);
+        Assert.assertEquals(5, result);
+    }
+
+    @Test
+    public void should_return_updateQuality_v4() {
+        Demo demo = new Demo();
+        int result = demo.calculateNormalQuality(0, 6, -1);
+        Assert.assertEquals(4, result);
+    }
+
+    @Test
+    public void should_return_updateQuality_v5() {
+        Demo demo = new Demo();
+        int result = demo.calculateNormalQuality(-1, 6, -2);
+        Assert.assertEquals(4, result);
+    }
 }
