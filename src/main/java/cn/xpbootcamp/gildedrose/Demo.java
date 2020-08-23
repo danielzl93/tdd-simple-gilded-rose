@@ -23,6 +23,15 @@ public class Demo {
             }
             updatedQuality = quality - lag;
         }
+        return updatedQuality;
+    }
+
+    public int calculateBackStagePassQuality(int sellIn, int quality, int updateSellIn) {
+        int updatedQuality = 0;
+
+        if (sellIn < updateSellIn || quality < 0 || quality > 50) {
+            throw new IllegalArgumentException("invalid arguments");
+        }
 
         return updatedQuality;
     }

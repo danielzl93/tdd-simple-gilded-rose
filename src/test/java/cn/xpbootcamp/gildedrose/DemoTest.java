@@ -20,12 +20,14 @@ public class DemoTest {
     @Test
     public void should_return_zero_when_quality_zero() {
         Demo demo = new Demo();
-        int result = demo.calculateNormalQuality(0, 0, 0);
-        Assert.assertEquals(0, result);
+        int normalResult = demo.calculateNormalQuality(0, 0, 0);
+        int backStagePassResult = demo.calculateBackStagePassQuality(0, 0, 0);
+        Assert.assertEquals(0, normalResult);
+        Assert.assertEquals(0, backStagePassResult);
     }
 
     @Test
-    public void should_throws_when_quality_large_than_zero() throws IllegalArgumentException {
+    public void should_throws_when_normal_quality_large_than_zero() throws IllegalArgumentException {
         expectedEx.expect(IllegalArgumentException.class);
         expectedEx.expectMessage("invalid arguments");
         Demo demo = new Demo();
@@ -33,11 +35,27 @@ public class DemoTest {
     }
 
     @Test
-    public void should_throws_when_quality_less_than_zero() throws IllegalArgumentException {
+    public void should_throws_when_back_stage_pass_quality_large_than_zero() throws IllegalArgumentException {
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("invalid arguments");
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(1, 51, 1);
+    }
+
+    @Test
+    public void should_throws_when_normal_quality_less_than_zero() throws IllegalArgumentException {
         expectedEx.expect(IllegalArgumentException.class);
         expectedEx.expectMessage("invalid arguments");
         Demo demo = new Demo();
         int result = demo.calculateNormalQuality(1, -1, 1);
+    }
+
+    @Test
+    public void should_throws_when_back_stage_pass_quality_less_than_zero() throws IllegalArgumentException {
+        expectedEx.expect(IllegalArgumentException.class);
+        expectedEx.expectMessage("invalid arguments");
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(1, -1, 1);
     }
 
     @Test
