@@ -142,4 +142,17 @@ public class DemoTest {
         Assert.assertEquals(48, result);
     }
 
+    @Test
+    public void should_return_stage_pass_updateQuality_v8() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(1, 20, 0);
+        Assert.assertEquals(23, result);
+    }
+
+    @Test
+    public void should_return_stage_pass_updateQuality_v9() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(0, 20, -1);
+        Assert.assertEquals(0, result);
+    }
 }

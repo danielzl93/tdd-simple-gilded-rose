@@ -33,6 +33,10 @@ public class Demo {
             throw new IllegalArgumentException("invalid arguments");
         }
 
+        if (updateSellIn < 0) {
+            return 0;
+        }
+
         if (quality == 0) {
             updatedQuality = 0;
         }else {
