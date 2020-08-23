@@ -41,6 +41,9 @@ public class Demo {
                 lag *= 2;
             }
             updatedQuality = quality + lag;
+            if (updatedQuality > 50) {
+                updatedQuality = 50;
+            }
         }
 
         return updatedQuality;
