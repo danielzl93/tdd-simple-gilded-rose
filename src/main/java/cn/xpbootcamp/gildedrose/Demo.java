@@ -18,6 +18,9 @@ public class Demo {
             updatedQuality = 0;
         }else {
             int lag = sellIn - updateSellIn;
+            if (updateSellIn < 0) {
+                lag *= 2;
+            }
             updatedQuality = quality - lag;
         }
 
