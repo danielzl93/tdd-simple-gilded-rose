@@ -80,16 +80,31 @@ public class DemoTest {
     }
 
     @Test
-    public void should_return_updateQuality_v4() {
+    public void should_return_updateQuality_when_expired_v1() {
         Demo demo = new Demo();
         int result = demo.calculateNormalQuality(0, 6, -1);
         Assert.assertEquals(4, result);
     }
 
     @Test
-    public void should_return_updateQuality_v5() {
+    public void should_return_updateQuality_when_expired_v2() {
         Demo demo = new Demo();
         int result = demo.calculateNormalQuality(-1, 6, -2);
         Assert.assertEquals(4, result);
     }
+
+    @Test
+    public void should_return_stage_pass_updateQuality_v1() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(15, 20, 14);
+        Assert.assertEquals(21, result);
+    }
+
+    @Test
+    public void should_return_stage_pass_updateQuality_v2() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(10, 45, 9);
+        Assert.assertEquals(47, result);
+    }
+
 }
