@@ -11,4 +11,11 @@ public class DemoTest {
         int result = demo.calculate(1, 1);
         Assert.assertEquals(2, result);
     }
+
+    @Test
+    public void should_return_zero_when_quality_zero() {
+        Demo demo = new Demo();
+        int result = demo.calculateNormalQuality(0, 0, 0);
+        Assert.assertEquals(0, result);
+    }
 }

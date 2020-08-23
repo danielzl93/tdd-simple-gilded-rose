@@ -5,4 +5,12 @@ public class Demo {
     public int calculate(int num1, int num2) {
         return num1 + num2;
     }
+
+    public int calculateNormalQuality(int sellIn, int quality, int updateSellIn) {
+
+        int updatedQulity = 0;
+
+        return updatedQulity;
+    }
+
 }
