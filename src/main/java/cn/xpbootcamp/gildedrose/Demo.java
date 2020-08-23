@@ -37,9 +37,13 @@ public class Demo {
             updatedQuality = 0;
         }else {
             int lag = sellIn - updateSellIn;
-            if (updateSellIn < 10) {
+
+            if (updateSellIn < 5) {
+                lag *= 3;
+            }else if (updateSellIn < 10) {
                 lag *= 2;
             }
+
             updatedQuality = quality + lag;
             if (updatedQuality > 50) {
                 updatedQuality = 50;

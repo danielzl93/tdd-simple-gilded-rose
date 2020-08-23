@@ -121,4 +121,25 @@ public class DemoTest {
         Assert.assertEquals(50, result);
     }
 
+    @Test
+    public void should_return_stage_pass_updateQuality_v5() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(10, 50, 9);
+        Assert.assertEquals(50, result);
+    }
+
+    @Test
+    public void should_return_stage_pass_updateQuality_v6() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(5, 49, 4);
+        Assert.assertEquals(50, result);
+    }
+
+    @Test
+    public void should_return_stage_pass_updateQuality_v7() {
+        Demo demo = new Demo();
+        int result = demo.calculateBackStagePassQuality(5, 45, 4);
+        Assert.assertEquals(48, result);
+    }
+
 }
